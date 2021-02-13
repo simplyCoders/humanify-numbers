@@ -3,6 +3,7 @@ Stringify numbers.
 
 ## Examples
 
+|Value|Number|Bytes|
 |---|---|---|
 |1234|1.2K|1.2KB|
 |1234567|1.2M|1.2MB|
