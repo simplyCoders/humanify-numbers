@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "./dist",
+        "strict": true,
+        "baseUrl": "./",
+        "paths": {
+            "*": [
+                "src/*",
+                "node_modules/*"
+            ]
+        },
+        "removeComments": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/__tests__/*",
+        "examples"
+    ]
+}

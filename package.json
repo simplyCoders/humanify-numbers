@@ -1,0 +1,39 @@
+{
+  "name": "humanify-numbers",
+  "version": "0.0.1",
+  "description": "Stringify numbers for humans. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -rf dist;eslint . --ext .ts --fix",
+    "build": "tsc -p tsconfig.json",
+    "example": "npx ts-node ./src/examples/ts-example.ts",
+    "jsexample": "node src/examples/js-example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplyCoders/stringify-numbers.git"
+  },
+  "keywords": [
+    "stringify",
+    "humanify",
+    "numbers",
+    "typescript"
+  ],
+  "authors": [
+    "simplyCoders"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simplyCoders/stringify-numbers/issues"
+  },
+  "homepage": "https://github.com/simplyCoders/stringify-numbers#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "typescript": "^4.1.5"
+  }
+}
