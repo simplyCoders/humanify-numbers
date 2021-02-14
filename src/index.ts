@@ -12,7 +12,7 @@ export class Numbers {
 
     // collect options
     const isByteFormat = !!((typeof options !== 'undefined' && typeof options.format === 'string' && options.format.toLowerCase() === 'bytes'))
-
+    
     // convert number to string
     const numberSuffix = ['', 'k', 'm', 'b', 't', 'Q']
     const byteSuffix = ['0', 'kb', 'mb', 'gb', 'tb', 'pb']
