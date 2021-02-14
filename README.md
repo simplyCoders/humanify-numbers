@@ -24,7 +24,7 @@ console.log('1234 ➜', Numbers.Humanify(1234, { format: 'bytes' }), 'with bytes
 const Numbers = require ('humanify-numbers')
 
 console.log("1234 ➜",Numbers.Humanify(1234))
-console.log("1234 ➜",Numbers.Humanify(1234),{"format":"bytes"})
+console.log("1234 ➜",Numbers.Humanify(1234,{"format":"bytes"}), 'with bytes option')
 ~~~
 
 ## Examples
