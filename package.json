@@ -1,14 +1,12 @@
 {
   "name": "humanify-numbers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stringify numbers for humans. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rm -rf dist;eslint . --ext .ts --fix",
-    "build": "tsc -p tsconfig.json",
-    "example": "npx ts-node ./src/examples/ts-example.ts",
-    "jsexample": "node src/examples/js-example.js"
+    "build": "tsc -p tsconfig.json"
   },
   "repository": {
     "type": "git",
