@@ -3,6 +3,30 @@ Stringify numbers for humans, aka Humanify. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%
 
 **_Still early development - Not ready for main use_**
 
+## Install 
+
+~~~
+npm install -s humanify-numbers
+~~~
+
+## Use in TypeScript
+
+~~~typescript
+import { Numbers } from 'humanify-numbers'
+
+console.log('1234 ➜', Numbers.Humanify(1234))
+console.log('1234 ➜', Numbers.Humanify(1234, { format: 'bytes' }), 'with bytes option')
+~~~
+
+## Use in JavaScript
+
+~~~javascript
+const Numbers = require ('humanify-numbers')
+
+console.log("1234 ➜",Numbers.Humanify(1234))
+console.log("1234 ➜",Numbers.Humanify(1234),{"format":"bytes"})
+~~~
+
 ## Examples
 
 |Value|Number|Bytes|
@@ -15,6 +39,7 @@ Stringify numbers for humans, aka Humanify. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%
 |0.12|12%|NaN|
 |0.012|1.2%|NaN|
 |0.0012|0.12%|NaN|
+|abcd|NaN|NaN|
 
 # Options
 
@@ -22,4 +47,4 @@ An optional parameter to manage how the numbers are humanified.
 
 |Option|Type|Description|
 |---|---|---|
-|format|string| Possible values: number (default) or bytes|
+|format|string| "number" (default) or "bytes"|
