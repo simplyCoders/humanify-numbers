@@ -4,8 +4,6 @@ Stringify numbers for humans, aka Humanify.
 
 E.g. 1234 ➜ "1.2K"
 
-**_Still early development - Not ready for main use_**
-
 ## Install 
 
 ~~~
