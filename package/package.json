@@ -1,7 +1,7 @@
 {
   "name": "humanify-numbers",
-  "version": "0.0.2",
-  "description": "Stringify numbers for humans. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%",
+  "version": "0.0.3",
+  "description": "Stringify numbers for humans. E.g. 1234 ➜ \"1.2K\"",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

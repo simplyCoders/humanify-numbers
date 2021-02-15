@@ -2,9 +2,7 @@
 
 Stringify numbers for humans, aka Humanify. 
 
-E.g. 1234 ➜ 1.2K
-
-**_Still early development - Not ready for main use_**
+E.g. 1234 ➜ "1.2K"
 
 ## Install 
 
@@ -12,22 +10,28 @@ E.g. 1234 ➜ 1.2K
 npm install -s humanify-numbers
 ~~~
 
-## Use in TypeScript
+## TypeScript Usage
 
+Simple TypeScript code:
 ~~~typescript
 import { Numbers } from 'humanify-numbers'
 
 console.log('1234 ➜', Numbers.Humanify(1234))
-console.log('1234 ➜', Numbers.Humanify(1234, { format: 'bytes' }), 'with bytes option')
+console.log('1234 ➜', Numbers.Humanify(1234, { format: 'bytes' }), '(bytes option)')
+console.log('1234 ➜', Numbers.Humanify(1234, { precision: 3 }), '(precision 3 option)')
 ~~~
 
-## Use in JavaScript
+The output:
+![simple example](https://raw.githubusercontent.com/simplyCoders/humanify-numbers/main/sample.png)
+
+## JavaScript Usage
+
+Same code in simple JavaScript:
 
 ~~~javascript
-const Numbers = require ('humanify-numbers')
+const Numbers = require ("humanify-numbers")
 
 console.log("1234 ➜",Numbers.Humanify(1234))
-console.log("1234 ➜",Numbers.Humanify(1234,{"format":"bytes"}), 'with bytes option')
 ~~~
 
 ## Examples
