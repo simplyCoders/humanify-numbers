@@ -1,6 +1,6 @@
 # humanify-numbers
 
-Stringify numbers for humans, aka Humanify. 
+Stringify numbers for humans, aka **_Humanify_** the numbers. 
 
 E.g. 1234 ➜ "1.2K"
 
@@ -13,6 +13,7 @@ npm install -s humanify-numbers
 ## TypeScript Usage
 
 Simple TypeScript code:
+
 ~~~typescript
 import { Numbers } from 'humanify-numbers'
 
@@ -24,6 +25,7 @@ console.log('1234 ➜', Numbers.Humanify(1234,
 ~~~
 
 The output:
+
 ![simple example](https://raw.githubusercontent.com/simplyCoders/humanify-numbers/main/sample.png)
 
 ## JavaScript Usage
