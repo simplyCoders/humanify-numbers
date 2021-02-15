@@ -1,0 +1,19 @@
+{
+  "name": "ts-simple",
+  "version": "1.0.0",
+  "description": "Simple example using typescript",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build",
+    "start": "npx ts-node src/index.ts"
+  },
+  "author": "simplyCoders",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "humanify-numbers": "file:../../package/humanify-numbers-0.0.2.tgz"
+  }
+}

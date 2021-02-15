@@ -1,5 +1,8 @@
 # humanify-numbers
-Stringify numbers for humans, aka Humanify. E.g. 1200 ➜ 1.2K, 0.012 ➜ 1.2%
+
+Stringify numbers for humans, aka Humanify. 
+
+E.g. 1234 ➜ 1.2K
 
 **_Still early development - Not ready for main use_**
 
@@ -48,3 +51,4 @@ An optional parameter to manage how the numbers are humanified.
 |Option|Type|Description|
 |---|---|---|
 |format|string| "number" (default) or "bytes"|
+|precision|number| Value between 0 and 3, default 1|
