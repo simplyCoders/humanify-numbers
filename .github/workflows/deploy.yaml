@@ -22,6 +22,10 @@ jobs:
     - name: build
       run: cd ./package && npm run build
         
+    # Copy readme
+    - name: copy readme
+      run: cd ./package && cp ../README.md .
+
     # Publish to npm
     - name: publish
       run: cd ./package && npm publish --access public

@@ -1,5 +1,5 @@
 {
-  "name": "simple-ts",
+  "name": "ts-simple",
   "version": "1.0.0",
   "description": "Simple example using typescript",
   "main": "./dist/index.js",
