@@ -48,3 +48,4 @@ An optional parameter to manage how the numbers are humanified.
 |Option|Type|Description|
 |---|---|---|
 |format|string| "number" (default) or "bytes"|
+|precision|number| Value between 0 and 3, default 1|
