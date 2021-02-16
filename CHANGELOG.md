@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.12 (Feb-16-2021)
+## 0.0.12 (Feb-15-2021)
 * Add tests to build.
 
 ## 0.0.10 (Feb-15-2021)
