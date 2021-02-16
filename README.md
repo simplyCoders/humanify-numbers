@@ -18,8 +18,10 @@ Simple TypeScript code:
 import { Numbers } from 'humanify-numbers'
 
 console.log('1234 ➜', Numbers.Humanify(1234))
+
 console.log('1234 ➜', Numbers.Humanify(1234, 
             { format: 'bytes' }), '(bytes option)')
+
 console.log('1234 ➜', Numbers.Humanify(1234, 
             { precision: 3 }), '(precision 3 option)')
 ~~~
@@ -47,9 +49,9 @@ console.log("1234 ➜",Numbers.Humanify(1234))
 |1234567890|1.2B|1.2GB|
 |1234567890123|1.2T|1.2TB|
 |1234567890123456|1.2Q|1.2PB|
-|0.12|12%|NaN|
-|0.012|1.2%|NaN|
-|0.0012|0.12%|NaN|
+|0.12 (future)|12%|NaN|
+|0.012 (future)|1.2%|NaN|
+|0.0012 (future)|0.12%|NaN|
 |abcd|NaN|NaN|
 
 # Options
