@@ -1,6 +1,5 @@
 src
 tsconfig.json
-tslint.json
 .eslintignore
 .eslintrc.json
 .github
