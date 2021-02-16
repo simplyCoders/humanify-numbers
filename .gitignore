@@ -29,5 +29,6 @@ coverage
 .env.test
 .cache
 .cache/
+.nyc_output/
 ./package.json
 ./package-lock.json
