@@ -43,6 +43,8 @@ console.log("1234 ➜",Numbers.Humanify(1234)); // output: 1234 ➜ 1.2K
 
 ~~~
 
+* For the JS example to work, don't forget to add `"type": "module"` in your package.json.
+
 ## Examples
 
 |Value|Number|Bytes|
