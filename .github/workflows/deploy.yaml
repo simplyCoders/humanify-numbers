@@ -26,6 +26,10 @@ jobs:
     - name: copy readme
       run: cd ./package && cp ../README.md .
 
+    # Copy license
+    - name: copy license
+      run: cd ./package && cp ../LICENSE .
+
     # Publish to npm
     - name: publish
       run: cd ./package && npm publish --access public

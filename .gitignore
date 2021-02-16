@@ -29,3 +29,5 @@ coverage
 .env.test
 .cache
 .cache/
+./package.json
+./package-lock.json
