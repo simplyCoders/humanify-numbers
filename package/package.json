@@ -22,9 +22,7 @@
     "numbers",
     "typescript"
   ],
-  "authors": [
-    "simplyCoders"
-  ],
+  "author": "simplyCoders",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/simplyCoders/stringify-numbers/issues"

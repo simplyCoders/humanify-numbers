@@ -22,6 +22,10 @@ jobs:
     - name: build
       run: cd ./package && npm run build
         
+    # Run tests
+    - name: test
+      run: cd ./package && npm test
+
     # Copy readme
     - name: copy readme
       run: cd ./package && cp ../README.md .
