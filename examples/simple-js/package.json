@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
   },
-  "author": "ez",
-  "license": "ISC",
+  "author": "simplyCoders",
+  "license": "MIT",
   "dependencies": {
     "humanify-numbers": "^0.0.11"
   }
