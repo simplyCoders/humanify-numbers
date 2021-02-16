@@ -10,6 +10,6 @@
   "author": "ez",
   "license": "ISC",
   "dependencies": {
-    "humanify-numbers": "^0.0.8"
+    "humanify-numbers": "^0.0.9"
   }
 }
