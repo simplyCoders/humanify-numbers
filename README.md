@@ -21,7 +21,7 @@ import { Numbers } from 'humanify-numbers'
 console.log('1234 ➜', Numbers.Humanify(1234)) // output: 1234 ➜ 1.2K
 
 console.log('1234 ➜', Numbers.Humanify(1234, 
-            { format: 'bytes' }), '(bytes)') // output: 1234 ➜ 1.2KB (bytes)
+            { format: 'byte' }), '(byte)') // output: 1234 ➜ 1.2KB (byte)
 
 console.log('1234 ➜', Numbers.Humanify(1234, 
             { precision: 3 }), '(precision 3)') // output: 1234 ➜ 1.234K (precision 3)
@@ -37,17 +37,15 @@ The output:
 Same code in simple JavaScript:
 
 ~~~javascript
-require ("humanify-numbers");
+const { Numbers } = require("humanify-numbers");
 
 console.log("1234 ➜",Numbers.Humanify(1234)); // output: 1234 ➜ 1.2K
 
 ~~~
 
-* For the JS example to work, don't forget to add `"type": "module"` in your package.json.
-
 ## Examples
 
-|Value|Number|Bytes|
+|Value|Number|Byte|
 |---|---|---|
 |1234|1.2K|1.2KB|
 |1234567|1.2M|1.2MB|
@@ -65,5 +63,5 @@ An optional parameter to manage how the numbers are humanified.
 
 |Option|Type|Description|
 |---|---|---|
-|format|string| "number" (default) or "bytes"|
+|format|string| "number" (default) or "byte"|
 |precision|number| Value between 0 and 3, default 1|
