@@ -89,7 +89,7 @@ describe('Precision tests.', () => {
         chai.expect(Numbers.Humanify(1234.567890, {precision:-1})).to.eql('1.2K')
     })
     it('1234.567890, precision ab ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:"ab"})).to.eql('1.2K')
+        chai.expect(Numbers.Humanify(1234.567890, {precision:"ab"})).to.eql('1.2K1')
     })
 })
 
