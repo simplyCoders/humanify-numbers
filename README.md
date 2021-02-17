@@ -1,4 +1,4 @@
-[![Run example on Repl.it](https://repl.it/join/ahkbmpzw-ezborgy)](https://repl.it/join/ahkbmpzw-ezborgy)
+[![Run example](https://img.shields.io/static/v1?label=repl.it&message=run%20example&color=blue)](https://repl.it/join/ahkbmpzw-ezborgy)
 
 # humanify-numbers
 
