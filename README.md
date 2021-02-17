@@ -1,4 +1,4 @@
-[![Run on Repl.it](https://repl.it/badge/github/simplyCoders/humanify-numbers)](https://repl.it/github/simplyCoders/humanify-numbers)
+[![Run example on Repl.it](https://repl.it/join/ahkbmpzw-ezborgy)](https://repl.it/join/ahkbmpzw-ezborgy)
 
 # humanify-numbers
 
