@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/simplyCoders/humanify-numbers)](https://repl.it/github/simplyCoders/humanify-numbers)
+
 # humanify-numbers
 
 Stringify numbers for humans, aka **_Humanify_** the numbers. 

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.13 (Feb-16-2021)
+* Add replt.it badge.
+
 ## 0.0.12 (Feb-15-2021)
 * Add tests to build.
 
