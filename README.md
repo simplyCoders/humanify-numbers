@@ -1,3 +1,5 @@
+[![Run example](https://img.shields.io/static/v1?label=repl.it&message=run%20example&color=blue)](https://repl.it/join/ahkbmpzw-ezborgy)
+
 # humanify-numbers
 
 Stringify numbers for humans, aka **_Humanify_** the numbers. 
