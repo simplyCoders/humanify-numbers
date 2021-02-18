@@ -14,6 +14,6 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "humanify-numbers": "^0.0.11"
+    "humanify-numbers": "^0.0.14"
   }
 }
