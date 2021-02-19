@@ -8,7 +8,6 @@ import { mathsAvailable, maths } from './maths'
 
 export class Numbers {
   static Humanify(value: number, options?: any) {
-
     // defaults
     const defaultOpts = { format: 'number', precision: 1, math: 'floor' }
 
@@ -38,33 +37,31 @@ export class Numbers {
       opts.math = options.math
     }
 
-    if (opts.format==='percent') {
-      value = value * 100
-    }
+    const val = (opts.format === 'percent') ? (value * 100) : value
 
     // end cases
-    if (value === 0) {
+    if (val === 0) {
       const zSuffix = formats[opts.format].suffix[0]
-      const zValue = (0).toFixed(opts.precision)
-      return zValue + zSuffix
+      const zeroVal = (0).toFixed(opts.precision)
+      return zeroVal + zSuffix
     }
 
-    const absValue = Math.abs(value)
-    if ((absValue < formats[opts.format].min) || (absValue > formats[opts.format].max)) {
+    const absVal = Math.abs(val)
+    if ((absVal < formats[opts.format].min) || (absVal > formats[opts.format].max)) {
       return 'NaN'
     }
 
-    if (opts.format === 'byte' && (!Number.isInteger(value) || value < 0)) {
+    if (opts.format === 'byte' && (!Number.isInteger(val) || val < 0)) {
       return 'NaN'
     }
 
     // process the value
-    let numberIndex = Math.floor(Math.log(absValue+0.00001) / Math.log(10) / 3)
+    let numberIndex = Math.floor(Math.log(absVal + 0.00001) / Math.log(10) / 3)
     numberIndex = (numberIndex < 0) ? 0 : numberIndex
     const suffix = formats[opts.format].suffix[numberIndex]
 
     const numDigitsToRemove = numberIndex * (-3) + opts.precision
-    const digitsToKeep = value * (10 ** numDigitsToRemove)
+    const digitsToKeep = val * (10 ** numDigitsToRemove)
     const applyMath = maths[opts.math](digitsToKeep)
     const applyPrecision = applyMath / (10 ** opts.precision)
     const humanifiedNumber = (applyPrecision).toFixed(opts.precision)
