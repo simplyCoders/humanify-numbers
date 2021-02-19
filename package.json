@@ -1,0 +1,26 @@
+{
+    "name": "humanify-numbers",
+    "description": "Stringify numbers for humans. E.g. 1234 ➜ \"1.2K\"",
+    "scripts": {
+        "message": "tput setaf 1&&echo 'The package files are under ./package. Please cd to that folder to get going.'",
+      "build": "npm run message",
+      "start": "npm run message"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/simplyCoders/stringify-numbers.git"
+    },
+    "keywords": [
+      "stringify",
+      "humanify",
+      "numbers",
+      "typescript"
+    ],
+    "author": "simplyCoders",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/simplyCoders/stringify-numbers/issues"
+    },
+    "homepage": "https://github.com/simplyCoders/stringify-numbers#readme"
+  }
+  
