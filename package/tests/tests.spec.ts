@@ -7,8 +7,14 @@ import { Numbers } from '../src'
 // Run basic tests
 // ----------------------------------------------
 describe('Basic Numbers tests.', () => {
-    it('0 ➜ 0', () => {
-        chai.expect(Numbers.Humanify(0)).to.eql('0')
+    it('0 ➜ 0.0', () => {
+        chai.expect(Numbers.Humanify(0)).to.eql('0.0')
+    })
+    it('0.1 ➜ 0.1', () => {
+        chai.expect(Numbers.Humanify(0.1)).to.eql('0.1')
+    })
+    it('0.01 ➜ 0.0', () => {
+        chai.expect(Numbers.Humanify(0.01)).to.eql('0.0')
     })
     it('1.234 ➜ 1.2', () => {
         chai.expect(Numbers.Humanify(1.234)).to.eql('1.2')
@@ -42,60 +48,88 @@ describe('Basic Numbers tests.', () => {
     })
 })
 
-describe('Binary tests.', () => {
-    it('0 ➜ 0B', () => {
-        chai.expect(Numbers.Humanify(0, {format:"byte"})).to.eql('0B')
+describe('Byte tests.', () => {
+    it('0 ➜ 0.0B', () => {
+        chai.expect(Numbers.Humanify(0, { format: "byte" })).to.eql('0.0B')
     })
-    it('1 ➜ 1B', () => {
-        chai.expect(Numbers.Humanify(1, {format:"byte"})).to.eql('1B')
+    it('1 ➜ 1.0B', () => {
+        chai.expect(Numbers.Humanify(1, { format: "byte" })).to.eql('1.0B')
     })
     it('12345 ➜ 12.3KB', () => {
-        chai.expect(Numbers.Humanify(12345, {format:"byte"})).to.eql('12.3KB')
+        chai.expect(Numbers.Humanify(12345, { format: "byte" })).to.eql('12.3KB')
     })
     it('1234567 ➜ 1.2MB', () => {
-        chai.expect(Numbers.Humanify(1234567, {format:"byte"})).to.eql('1.2MB')
+        chai.expect(Numbers.Humanify(1234567, { format: "byte" })).to.eql('1.2MB')
     })
     it('1234567890 ➜ 1.2GB', () => {
-        chai.expect(Numbers.Humanify(1234567890, {format:"byte"})).to.eql('1.2GB')
+        chai.expect(Numbers.Humanify(1234567890, { format: "byte" })).to.eql('1.2GB')
     })
     it('1.2 ➜ NaN', () => {
-        chai.expect(Numbers.Humanify(1.2, {format:"byte"})).to.eql('NaN')
+        chai.expect(Numbers.Humanify(1.2, { format: "byte" })).to.eql('NaN')
     })
     it('-1 ➜ NaN', () => {
-        chai.expect(Numbers.Humanify(-1, {format:"byte"})).to.eql('NaN')
+        chai.expect(Numbers.Humanify(-1, { format: "byte" })).to.eql('NaN')
     })
 })
 
 describe('Precision tests.', () => {
-    it('1234.567890, precision 0 ➜ 1k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:0})).to.eql('1K')
+    it('1234.567890, precision 0 ➜ 1K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: 0 })).to.eql('1K')
     })
-    it('1234.567890, precision 1 ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:1})).to.eql('1.2K')
+    it('1234.567890, precision 1 ➜ 1.2K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: 1 })).to.eql('1.2K')
     })
-    it('1234.567890, precision 2 ➜ 1.23k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:2})).to.eql('1.23K')
+    it('1234.567890, precision 2 ➜ 1.23K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: 2 })).to.eql('1.23K')
     })
-    it('1234.567890, precision 3 ➜ 1.234k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:3})).to.eql('1.234K')
+    it('1234.567890, precision 3 ➜ 1.234K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: 3 })).to.eql('1.234K')
     })
-    it('1234.567890, precision 4 ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:4})).to.eql('1.2K')
+    it('1234.567890, precision 4 ➜ 1.2K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: 4 })).to.eql('1.2K')
     })
-    it('1234.567890, precision -1 ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:-1})).to.eql('1.2K')
+    it('1234.567890, precision -1 ➜ 1.2K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: -1 })).to.eql('1.2K')
     })
-    it('1234.567890, precision 1.2 ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:-1})).to.eql('1.2K')
+    it('1234.567890, precision 1.2 ➜ 1.2K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: -1 })).to.eql('1.2K')
     })
-    it('1234.567890, precision ab ➜ 1.2k', () => {
-        chai.expect(Numbers.Humanify(1234.567890, {precision:"ab"})).to.eql('1.2K')
+    it('1234.567890, precision ab ➜ 1.2K', () => {
+        chai.expect(Numbers.Humanify(1234.567890, { precision: "ab" })).to.eql('1.2K')
+    })
+
+    it('1000, precision 2 ➜ 1.00K', () => {
+        chai.expect(Numbers.Humanify(1000.0, { precision: 2 })).to.eql('1.00K')
+    })
+})
+
+describe('Percent tests.', () => {
+    it('0 precision 3 ➜ 0.000%', () => {
+        chai.expect(Numbers.Humanify(0, { format: "percent", precision:3 })).to.eql('0.000%')
+    })
+    it('0.01234 ➜ 1.2%', () => {
+        chai.expect(Numbers.Humanify(0.01234, { format: "percent" })).to.eql('1.2%')
+    })
+    it('0.01234, precision 3 ➜ 1.234%', () => {
+        chai.expect(Numbers.Humanify(0.01234, { format: "percent", precision: 3 })).to.eql('1.234%')
+    })
+    it('0.01234, precision 0 ➜ 1%', () => {
+        chai.expect(Numbers.Humanify(0.01234, { format: "percent", precision: 0 })).to.eql('1%')
+    })
+    it('0.1234 ➜ 12.3%', () => {
+        chai.expect(Numbers.Humanify(0.1234, { format: "percent" })).to.eql('12.3%')
+    })
+    it('1.234 ➜ 123.4%', () => {
+        chai.expect(Numbers.Humanify(1.234, { format: "percent" })).to.eql('123.4%')
+    })
+    it('12.34 ➜ 1234.0%', () => {
+        chai.expect(Numbers.Humanify(12.34, { format: "percent" })).to.eql('1234.0%')
     })
 })
 
 describe('Endcases tests.', () => {
     it('abc ➜ NaN', () => {
-        const noTypeFunction:any = Numbers.Humanify
+        const noTypeFunction: any = Numbers.Humanify
         chai.expect(noTypeFunction("abc")).to.eql('NaN')
-    })    
+    })
 })

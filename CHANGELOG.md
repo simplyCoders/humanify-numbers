@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.16 (Feb-18-2021)
+* Add support for percent format.
+* Fix bugs when precision is not zero but there are no digits after the decimal point. 
+* Fix bug with 1000.
+
 ## 0.0.13 (Feb-16-2021)
 * Add replt.it badge.
 
