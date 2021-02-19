@@ -15,6 +15,18 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    },
     "rules": {
         "semi": [
             "error",
@@ -24,6 +36,7 @@
             "error",
             2
         ],
+        "import/extensions": "off",
         "import/prefer-default-export": "off"
     }
 }

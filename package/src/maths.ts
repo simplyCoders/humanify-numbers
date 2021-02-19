@@ -7,7 +7,7 @@ export interface IMaths {
     [key: string]: any
 }
 export const maths: IMaths = {
-    'floor': Math.floor,
-    'round': Math.round,
-    'ceil': Math.ceil
+  floor: Math.floor,
+  round: Math.round,
+  ceil: Math.ceil,
 }
