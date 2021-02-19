@@ -4,16 +4,15 @@
 // Developed by simplyCoders, 2021.
 
 const humanifyPercent = (value: number, precision: number) => {
-
-    // convert number to string
-    return ((value*100).toFixed(precision)).toString() + '%'
-
+  // convert number to string
+  const percent = value * 100
+  return `${percent.toFixed(precision)}%`
 }
 
 export class Numbers {
   static Humanify(value: number, options?: any) {
-    const numberSuffix = ['' , 'K' , 'M' , 'B' , 'T' , 'Q']
-    const byteSuffix   = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+    const numberSuffix = ['', 'K', 'M', 'B', 'T', 'Q']
+    const byteSuffix = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
     // validate value
     if (typeof value !== 'number') {
@@ -46,14 +45,15 @@ export class Numbers {
 
     // analyze the number
     const avalue = Math.abs(value)
-    let numberCategory = Math.floor(Math.log(avalue+0.0001) / Math.log(10) / 3) // '', 'k', 'm', ..
-    numberCategory = (numberCategory<0) ? 0 : numberCategory
+    let numberCategory = Math.floor(Math.log(avalue + 0.0001) / Math.log(10) / 3)
+    numberCategory = (numberCategory < 0) ? 0 : numberCategory
     const suffix = isByteFormat ? byteSuffix[numberCategory] : numberSuffix[numberCategory]
 
     const digitsToRemove = numberCategory * 3 - precision
-    const digitsToKeep = (Math.floor(value / (10 ** digitsToRemove)) / (10 ** precision)).toFixed(precision)
+    const humanifiedNumber = (Math.floor(value / (10 ** digitsToRemove)) / (10 ** precision))
+      .toFixed(precision)
 
     // convert number to string
-    return digitsToKeep + suffix
+    return humanifiedNumber + suffix
   }
 }
