@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.17 (Feb-19-2021)
+* Add support math: floor, round, ceil. 
+* Refactoring for better unification of percent and others.
+* Add documentation of limites in the readme. 
+
 ## 0.0.16 (Feb-18-2021)
 * Add support for percent format.
 * Fix bugs when precision is not zero but there are no digits after the decimal point. 

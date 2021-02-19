@@ -83,5 +83,16 @@ An optional parameter to manage how the numbers are humanified.
 
 |Option|Type|Description|
 |---|---|---|
-|format|string| "number" (default) or "byte"|
+|format|string| "number" (default) or "byte" or "percent"|
 |precision|number| Value between 0 and 3, default 1|
+|math|string| "floor" (default) or "round" or "ceil"|
+
+# Limits
+
+* Precision can be a number between 0 and 3.
+* Value for "number" must be less than 1,000T (or 10 to the power of 15). 
+* Value for "number" must be greater than -1,000T (or minus 10 to the power of 15). 
+* Value for "byte" must be a positive integer.
+* Value for "byte" must be less than 1,000PB (or 10 to the power of 18). 
+* Value for "percent" must be less than 1,000K%. 
+* Value for "percent" must be greater than -1,000%. 

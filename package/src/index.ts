@@ -3,57 +3,73 @@
 // Convert numbers to human readbale / short strings.
 // Developed by simplyCoders, 2021.
 
-const humanifyPercent = (value: number, precision: number) => {
-  // convert number to string
-  const percent = value * 100
-  return `${percent.toFixed(precision)}%`
-}
+import { formatsAvailable, formats } from './formats'
+import { mathsAvailable, maths } from './maths'
 
 export class Numbers {
   static Humanify(value: number, options?: any) {
-    const numberSuffix = ['', 'K', 'M', 'B', 'T', 'Q']
-    const byteSuffix = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+
+    // defaults
+    const defaultOpts = { format: 'number', precision: 1, math: 'floor' }
 
     // validate value
     if (typeof value !== 'number') {
       return 'NaN'
     }
 
-    // collect options
-    const opts = (typeof options === 'undefined') ? {} : options
+    // analyze options
+    const opts = defaultOpts
+    if ((typeof options !== 'undefined')
+      && (typeof options.format === 'string')
+      && (formatsAvailable.includes(options.format))) {
+      opts.format = options.format
+    }
 
-    const optsByte = (typeof opts.format !== 'string') ? 'number' : opts.format.toLowerCase()
-    const isByteFormat = (optsByte === 'byte')
-    const isPercentFormat = (optsByte === 'percent')
+    if ((typeof options !== 'undefined')
+      && (typeof options.precision === 'number')
+      && (options.precision >= 0)
+      && (options.precision <= 3)) {
+      opts.precision = options.precision
+    }
 
-    const optsPrecision = (typeof opts.precision !== 'number' || !Number.isInteger(opts.precision)) ? 1 : opts.precision
-    const precision = (optsPrecision < 0 || optsPrecision > 3) ? 1 : optsPrecision
+    if ((typeof options !== 'undefined')
+      && (typeof options.math === 'string')
+      && (mathsAvailable.includes(options.math))) {
+      opts.math = options.math
+    }
+
+    if (opts.format==='percent') {
+      value = value * 100
+    }
 
     // end cases
-    if (isByteFormat && value < 0) {
+    if (value === 0) {
+      const zSuffix = formats[opts.format].suffix[0]
+      const zValue = (0).toFixed(opts.precision)
+      return zValue + zSuffix
+    }
+
+    const absValue = Math.abs(value)
+    if ((absValue < formats[opts.format].min) || (absValue > formats[opts.format].max)) {
       return 'NaN'
     }
 
-    if (isByteFormat && !Number.isInteger(value)) {
+    if (opts.format === 'byte' && (!Number.isInteger(value) || value < 0)) {
       return 'NaN'
     }
 
-    // handle percent
-    if (isPercentFormat) {
-      return humanifyPercent(value, precision)
-    }
+    // process the value
+    let numberIndex = Math.floor(Math.log(absValue+0.00001) / Math.log(10) / 3)
+    numberIndex = (numberIndex < 0) ? 0 : numberIndex
+    const suffix = formats[opts.format].suffix[numberIndex]
 
-    // analyze the number
-    const avalue = Math.abs(value)
-    let numberCategory = Math.floor(Math.log(avalue + 0.0001) / Math.log(10) / 3)
-    numberCategory = (numberCategory < 0) ? 0 : numberCategory
-    const suffix = isByteFormat ? byteSuffix[numberCategory] : numberSuffix[numberCategory]
+    const numDigitsToRemove = numberIndex * (-3) + opts.precision
+    const digitsToKeep = value * (10 ** numDigitsToRemove)
+    const applyMath = maths[opts.math](digitsToKeep)
+    const applyPrecision = applyMath / (10 ** opts.precision)
+    const humanifiedNumber = (applyPrecision).toFixed(opts.precision)
 
-    const digitsToRemove = numberCategory * 3 - precision
-    const humanifiedNumber = (Math.floor(value / (10 ** digitsToRemove)) / (10 ** precision))
-      .toFixed(precision)
-
-    // convert number to string
+    // build the final string
     return humanifiedNumber + suffix
   }
 }
