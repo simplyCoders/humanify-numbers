@@ -93,10 +93,8 @@ An optional parameter to manage how the numbers are humanified.
 
 # Limits
 
-* Precision can be a number between 0 and 3.
-* Value for "number" must be less than 1,000T (or 10 to the power of 15). 
-* Value for "number" must be greater than -1,000T (or minus 10 to the power of 15). 
-* Value for "byte" must be a positive integer.
-* Value for "byte" must be less than 1,000PB (or 10 to the power of 18). 
-* Value for "percent" must be less than 1,000K%. 
-* Value for "percent" must be greater than -1,000%. 
+* "precision": number between 0 and 3
+* "number": Value < 1,000T (aka 10^15) and Value > -1,000T 
+* "byte": value must be a positive integer
+* "byte": Value < 1,000PB (aka 10^18) and Value >= 0
+* "percent": Value < 1,000K% (aka 10,000) and Value > -1,000K%
