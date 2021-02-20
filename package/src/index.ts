@@ -1,11 +1,46 @@
-// //////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////
 // humanify-numbers
 // Convert numbers to human readbale / short strings.
 // Developed by simplyCoders, 2021.
 
-import { formatsAvailable, formats } from './formats'
-import { mathsAvailable, maths } from './maths'
+// ----------------------------------------------
+// Supported formats.
+const formatsAvailable = ['number', 'byte', 'percent']
+interface IFormats {
+    [key: string]: any
+}
+const formats: IFormats = {
+  number: {
+    suffix: ['', 'K', 'M', 'B', 'T'],
+    min: 10 ** (-3),
+    max: 10 ** 15,
+  },
+  byte: {
+    suffix: ['B', 'KB', 'MB', 'GB', 'TB', 'PB'],
+    min: 10 ** (0),
+    max: 10 ** 18,
+  },
+  percent: {
+    suffix: ['%', 'K%'],
+    min: 10 ** (-3),
+    max: 10 ** 6,
+  },
+}
 
+// ----------------------------------------------
+// Supported math functions.
+const mathsAvailable = ['floor', 'round', 'ceil']
+interface IMaths {
+    [key: string]: any
+}
+const maths: IMaths = {
+  floor: Math.floor,
+  round: Math.round,
+  ceil: Math.ceil,
+}
+
+// ----------------------------------------------
+// The exposrt: Numbers class
 export class Numbers {
   static Humanify(value: number, options?: any) {
     // defaults

@@ -26,10 +26,6 @@ jobs:
     - name: test
       run: cd ./package && npm test
 
-    # Copy readme
-    - name: copy readme
-      run: cd ./package && cp ../README.md .
-
     # Copy license
     - name: copy license
       run: cd ./package && cp ../LICENSE .

@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.19 (Feb-20-2021)
+* shrink the dist folder by merging back all ts files. 
+
 ## 0.0.17 (Feb-19-2021)
 * Add support math: floor, round, ceil. 
 * Refactoring for better unification of percent and others.
