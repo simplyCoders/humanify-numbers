@@ -21,16 +21,14 @@ import { Numbers } from 'humanify-numbers'
 console.log('1234 ➜', Numbers.Humanify(1234)) // output: 1234 ➜ 1.2K
 
 console.log('1234 ➜', Numbers.Humanify(1234, 
-                         { format: 'byte' })) // output: 1234 ➜ 1.2KB (byte)
+                         { format: 'byte' })) // output: 1234 ➜ 1.2KB
 
 console.log('1234 ➜', Numbers.Humanify(1234, 
-                           { precision: 3 })) // output: 1234 ➜ 1.234K (precision 3)
+                           { precision: 3 })) // output: 1234 ➜ 1.234K
             
+console.log('1.234 ➜', Numbers.Humanify(1.234, 
+                      { format: 'percent' })) // output: 1.234 ➜ 123.4%
 ~~~
-
-The output:
-
-![simple example](https://raw.githubusercontent.com/simplyCoders/humanify-numbers/main/sample.png)
 
 ## JavaScript Usage
 
