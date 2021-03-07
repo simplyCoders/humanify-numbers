@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.0 (March-6-2021)
+* After more testing. Officially announce the release of 1.0.0.
+
 ## 0.0.19 (Feb-20-2021)
 * shrink the dist folder by merging back all ts files. 
 
