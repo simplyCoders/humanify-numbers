@@ -2,7 +2,7 @@
     "name": "humanify-numbers",
     "description": "Stringify numbers for humans. E.g. 1234 ➜ \"1.2K\"",
     "scripts": {
-        "message": "tput setaf 1&&echo 'The package files are under ./package. Please cd to that folder to get going.'",
+        "message": "tput setaf 1&&echo 'The package files are under ./lib. Please cd to that folder to get going.'",
       "build": "npm run message",
       "start": "npm run message"
     },

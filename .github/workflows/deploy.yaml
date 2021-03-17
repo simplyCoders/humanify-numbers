@@ -16,22 +16,22 @@ jobs:
 
     # Install
     - name: install
-      run: cd ./package && npm install
+      run: cd ./lib && npm install
 
     # Build
     - name: build
-      run: cd ./package && npm run build
+      run: cd ./lib && npm run build
         
     # Run tests
     - name: test
-      run: cd ./package && npm test
+      run: cd ./lib && npm test
 
     # Copy license
     - name: copy license
-      run: cd ./package && cp ../LICENSE .
+      run: cd ./lib && cp ../LICENSE .
 
     # Publish to npm
     - name: publish
-      run: cd ./package && npm publish --access public
+      run: cd ./lib && npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
