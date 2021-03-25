@@ -1,7 +1,12 @@
 # Changelog
 
+## 1.1.0 (March-24-2021)
+* This is a breaking change!
+* Suppress zeros after the decimal point if the number is already an integer.
+* Change interface from Humanify to stringify.
+
 ## 1.0.1 (March-17-2021)
-* Chnage folder structure. ./;ib now contains the package code.
+* Chnage folder structure. ./lib now contains the package code.
 
 ## 1.0.0 (March-6-2021)
 * After more testing. Officially announce the release of 1.0.0.

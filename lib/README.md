@@ -17,15 +17,15 @@ Simple TypeScript code:
 ~~~typescript
 import { Numbers } from 'humanify-numbers'
 
-console.log('1234 ➜', Numbers.Humanify(1234)) // output: 1234 ➜ 1.2K
+console.log('1234 ➜', Numbers.stringify(1234)) // output: 1234 ➜ 1.2K
 
-console.log('1234 ➜', Numbers.Humanify(1234, 
+console.log('1234 ➜', Numbers.stringify(1234, 
                          { format: 'byte' })) // output: 1234 ➜ 1.2KB
 
-console.log('1234 ➜', Numbers.Humanify(1234, 
+console.log('1234 ➜', Numbers.stringify(1234, 
                            { precision: 3 })) // output: 1234 ➜ 1.234K
 
-console.log('1.234 ➜', Numbers.Humanify(1.234, 
+console.log('1.234 ➜', Numbers.stringify(1.234, 
                       { format: 'percent' })) // output: 1.234 ➜ 123.4%
 ~~~
 
@@ -36,7 +36,7 @@ Same code in simple JavaScript:
 ~~~javascript
 const { Numbers } = require("humanify-numbers");
 
-console.log("1234 ➜",Numbers.Humanify(1234)); // output: 1234 ➜ 1.2K
+console.log("1234 ➜",Numbers.stringify(1234)); // output: 1234 ➜ 1.2K
 
 ~~~
 

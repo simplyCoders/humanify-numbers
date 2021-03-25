@@ -8,7 +8,7 @@ import { Numbers } from '../src'
 // ----------------------------------------------
 describe('Endcases tests.', () => {
     it('abc ➜ NaN', () => {
-        const noTypeFunction: any = Numbers.Humanify
+        const noTypeFunction: any = Numbers.stringify
         chai.expect(noTypeFunction("abc")).to.eql('NaN')
     })
 })
