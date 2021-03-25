@@ -10,6 +10,6 @@
   "author": "simplyCoders",
   "license": "MIT",
   "dependencies": {
-    "humanify-numbers": "^0.0.14"
+    "humanify-numbers": "^1.1.0"
   }
 }

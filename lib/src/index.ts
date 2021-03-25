@@ -42,7 +42,7 @@ const maths: IMaths = {
 // ----------------------------------------------
 // The exposrt: Numbers class
 export class Numbers {
-  static Humanify(value: number, options?: any) {
+  static stringify(value: number, options?: any) {
     // defaults
     const defaultOpts = { format: 'number', precision: 1, math: 'floor' }
 
@@ -77,7 +77,7 @@ export class Numbers {
     // end cases
     if (val === 0) {
       const zSuffix = formats[opts.format].suffix[0]
-      const zeroVal = (0).toFixed(opts.precision)
+      const zeroVal = (0).toString()
       return zeroVal + zSuffix
     }
 
@@ -99,7 +99,7 @@ export class Numbers {
     const digitsToKeep = val * (10 ** numDigitsToRemove)
     const applyMath = maths[opts.math](digitsToKeep)
     const applyPrecision = applyMath / (10 ** opts.precision)
-    const humanifiedNumber = (applyPrecision).toFixed(opts.precision)
+    const humanifiedNumber = (applyPrecision).toString()
 
     // build the final string
     return humanifiedNumber + suffix
