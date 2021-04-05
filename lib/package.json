@@ -1,6 +1,6 @@
 {
   "name": "humanify-numbers",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Stringify numbers for humans. E.g. 1234 ➜ \"1.2K\"",
   "main": "./dist/index.js",
   "scripts": {
