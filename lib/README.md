@@ -17,12 +17,15 @@ Simple TypeScript code:
 ~~~typescript
 import { Numbers } from 'humanify-numbers'
 
-console.log("1234567890 ➜", (1234567890).toLocaleString())
-// the built-in toLocalString() output: 1,234,567,890
-console.log("1234567890 ➜",Numbers.stringify(1234567890)); 
+console.log("1234567890 ➜", Numbers.stringify(1234567890))
 // output: 1.2B
-console.log("1234567890 ➜",Numbers.stringify(1234567890, { format: 'byte' })) 
+
+console.log("1234567890 ➜", Numbers.stringify(1234567890, 
+                            { format: 'byte' })) 
 // output: 1.2GB
+
+console.log("1234567890 ➜", (1234567890).toLocaleString())
+// compare with toLocalString(): 1,234,567,890
 ~~~
 
 ## JavaScript Usage
@@ -32,7 +35,7 @@ Same code in simple JavaScript:
 ~~~javascript
 const { Numbers } = require("humanify-numbers");
 
-console.log("1234 ➜",Numbers.stringify(1234)); 
+console.log("1234 ➜", Numbers.stringify(1234)); 
 // output: 1234 ➜ 1.2K
 ~~~
 
