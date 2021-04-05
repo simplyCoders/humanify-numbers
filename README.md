@@ -10,7 +10,7 @@ E.g. 1234 ➜ "1.2K"
 npm install -s humanify-numbers
 ~~~
 
-## TypeScript Usage
+## Use in TypeScript 
 
 Simple TypeScript code:
 
@@ -25,7 +25,7 @@ console.log("1234567890 ➜",Numbers.stringify(1234567890, { format: 'byte' }))
 // output: 1.2GB
 ~~~
 
-## JavaScript Usage
+## Use in JavaScript
 
 Same code in simple JavaScript:
 
