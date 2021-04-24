@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.4 (April-24-2021)
+* Change "format" to "style"
+* Chance "byte" to "storage"
+* For backward compatability, continue to support older terms. 
+
 ## 1.1.0 (March-24-2021)
 * This is a breaking change!
 * Suppress zeros after the decimal point if the number is already an integer.
