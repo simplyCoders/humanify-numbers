@@ -21,7 +21,7 @@ console.log("1234567890 ➜", Numbers.stringify(1234567890))
 // output: 1.2B
 
 console.log("1234567890 ➜", Numbers.stringify(1234567890, 
-                            { format: 'byte' })) 
+                            { style: 'storage' })) 
 // output: 1.2GB
 
 console.log("1234567890 ➜", (1234567890).toLocaleString())
@@ -54,7 +54,7 @@ console.log("1234 ➜", Numbers.stringify(1234));
 |0.1234|0.1|
 |abcd|NaN|
 
-### Byte
+### Storage
 
 |Value|Humanify|
 |---|---|
@@ -83,14 +83,15 @@ An optional parameter to manage how the numbers are humanified.
 
 |Option|Type|Description|
 |---|---|---|
-|format|string| "number" (default) or "byte" or "percent"|
+|style|string| "number" (default) or "storage" or "percent"|
 |precision|number| Value between 0 and 3, default 1|
 |math|string| "floor" (default) or "round" or "ceil"|
+|format (deprecated)|string| "number" (default) or "byte" or "percent"|
 
 # Limits
 
 * "precision": number between 0 and 3
 * "number": Value < 1,000T (aka 10^15) and Value > -1,000T 
-* "byte": value must be a positive integer
-* "byte": Value < 1,000PB (aka 10^18) and Value >= 0
+* "storage": value must be a positive integer
+* "storage": Value < 1,000PB (aka 10^18) and Value >= 0
 * "percent": Value < 1,000K% (aka 10,000) and Value > -1,000K%
