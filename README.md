@@ -21,8 +21,8 @@ console.log("1234567890 ➜", Numbers.stringify(1234567890))
 // output: 1.2B
 
 console.log("1234567890 ➜", Numbers.stringify(1234567890, 
-                            { style: 'storage' })) 
-// output: 1.2GB
+                            { style: 'space' })) 
+// output: 1.2GiB
 
 console.log("1234567890 ➜", (1234567890).toLocaleString())
 // compare with toLocalString(): 1,234,567,890
@@ -56,13 +56,16 @@ console.log("1234 ➜", Numbers.stringify(1234));
 
 ### Storage
 
+Following the IEC 80000-13:2008 spec:
+
 |Value|Humanify|
 |---|---|
-|1234|1.2KB|
-|1234567|1.2MB|
-|1234567890|1.2GB|
-|1234567890123|1.2TB|
-|1234567890123456|1.2PB|
+|1234|1.2KiB|
+|1234567|1.2MiB|
+|1234567890|1.2GiB|
+|1234567890123|1.2TiB|
+|1234567890123456|1.2PiB|
+|1234567890123456789|1.2EiB|
 |1.234|NaN|
 |-1234|NaN|
 |abcd|NaN|
@@ -83,7 +86,7 @@ An optional parameter to manage how the numbers are humanified.
 
 |Option|Type|Description|
 |---|---|---|
-|style|string| "number" (default) or "storage" or "percent"|
+|style|string| "number" (default) or "space" or "percent"|
 |precision|number| Value between 0 and 3, default 1|
 |math|string| "floor" (default) or "round" or "ceil"|
 |format (deprecated)|string| "number" (default) or "byte" or "percent"|
@@ -92,6 +95,6 @@ An optional parameter to manage how the numbers are humanified.
 
 * "precision": number between 0 and 3
 * "number": Value < 1,000T (aka 10^15) and Value > -1,000T 
-* "storage": value must be a positive integer
-* "storage": Value < 1,000PB (aka 10^18) and Value >= 0
+* "space": value must be a positive integer
+* "space": Value < 1,000EiB (aka 1,024^7) and Value >= 0
 * "percent": Value < 1,000K% (aka 10,000) and Value > -1,000K%

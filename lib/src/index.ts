@@ -5,7 +5,7 @@
 
 // ----------------------------------------------
 // Supported styless.
-const stylesAvailable = ['number', 'storage', 'percent', 'byte']
+const stylesAvailable = ['number', 'space', 'percent', 'byte', 'storage']
 interface IStyles {
   [key: string]: any
 }
@@ -15,10 +15,10 @@ const styles: IStyles = {
     min: 10 ** (-3),
     max: 10 ** 15,
   },
-  storage: {
-    suffix: ['B', 'KB', 'MB', 'GB', 'TB', 'PB'],
+  space: {
+    suffix: ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB'],
     min: 10 ** (0),
-    max: 10 ** 18,
+    max: 10 ** 21,
   },
   percent: {
     suffix: ['%', 'K%'],
@@ -66,7 +66,11 @@ export class Numbers {
     }
 
     if (opts.style === 'byte') { // for backward compatability
-      opts.style = 'storage'
+      opts.style = 'space'
+    }
+
+    if (opts.style === 'storage') { // for backward compatability
+      opts.style = 'space'
     }
 
     if ((typeof options !== 'undefined')
@@ -96,7 +100,7 @@ export class Numbers {
       return 'NaN'
     }
 
-    if (opts.style === 'storage' && (!Number.isInteger(val) || val < 0)) {
+    if (opts.style === 'space' && (!Number.isInteger(val) || val < 0)) {
       return 'NaN'
     }
 
