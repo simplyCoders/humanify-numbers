@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.5 (May-15-2021)
+* Change "storage" to "space",
+* Change space strings from XB to XiB. E.g. 1234 used to be 1.2KB and will now be 1.2KiB (according to IEC 80000-13:2008).
+* Add bigger space numbers up to 999EiB (< 10^21).
+
 ## 1.1.4 (April-24-2021)
 * Change "format" to "style"
 * Chance "byte" to "storage"
