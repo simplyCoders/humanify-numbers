@@ -115,7 +115,7 @@ export class Numbers {
     logOfVal = (logOfVal < 0) ? 0 : logOfVal // optimize
 
     let normalizedVal = val / (denominator ** logOfVal)
-    if (Math.floor(normalizedVal)==0 && logOfVal > 0) { // optimize
+    if (Math.floor(normalizedVal)===0 && logOfVal > 0) { // optimize
       logOfVal -= 1
       normalizedVal = val / (denominator ** logOfVal)
     }
