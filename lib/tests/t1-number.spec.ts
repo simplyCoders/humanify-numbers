@@ -31,7 +31,7 @@ describe('Numbers tests.', () => {
     it('12345 ➜ 12.3K', () => {
         chai.expect(Numbers.stringify(12345)).to.eql('12.3K')
     })
-    it('123456 ➜ 123.4M', () => {
+    it('123456 ➜ 123.4K', () => {
         chai.expect(Numbers.stringify(123456)).to.eql('123.4K')
     })
     it('1234567 ➜ 1.2M', () => {

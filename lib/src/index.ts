@@ -5,13 +5,18 @@
 
 // ----------------------------------------------
 // Supported styless.
-const stylesAvailable = ['number', 'space', 'percent', 'byte', 'storage']
+const stylesAvailable = ['number', 'space', 'percent', 'byte', 'storage', 'namedNumber']
 interface IStyles {
   [key: string]: any
 }
 const styles: IStyles = {
   number: {
-    suffix: ['', 'K', 'M', 'B', 'T'],
+    suffix: ['', 'K', 'M', 'B', 'T', 'Q'],
+    min: 10 ** (-3),
+    max: 10 ** 15,
+  },
+  namedNumber: {
+    suffix: ['', ' Thousand', ' Million', ' Billion', ' Trillion', ' Quadrillion'],
     min: 10 ** (-3),
     max: 10 ** 15,
   },
@@ -105,17 +110,25 @@ export class Numbers {
     }
 
     // process the value
-    let numberIndex = Math.floor(Math.log(absVal + 0.00001) / Math.log(10) / 3)
-    numberIndex = (numberIndex < 0) ? 0 : numberIndex
-    const suffix = styles[opts.style].suffix[numberIndex]
+    const denominator = (opts.style === 'space') ? 1024 : 1000
+    let logOfVal = Math.floor(Math.log(absVal + 0.00001) / Math.log(denominator))
+    logOfVal = (logOfVal < 0) ? 0 : logOfVal // optimize
 
-    const numDigitsToRemove = numberIndex * (-3) + opts.precision
-    const digitsToKeep = val * (10 ** numDigitsToRemove)
-    const applyMath = maths[opts.math](digitsToKeep)
-    const applyPrecision = applyMath / (10 ** opts.precision)
-    const humanifiedNumber = (applyPrecision).toString()
+    let normalizedVal = val / (denominator ** logOfVal)
+    if (Math.floor(normalizedVal)==0 && logOfVal > 0) { // optimize
+      logOfVal -= 1
+      normalizedVal = val / (denominator ** logOfVal)
+    }
 
+    const precisionedVal = maths[opts.math](normalizedVal * (10 ** opts.precision)) / (10 ** opts.precision)
+
+    const humanifiedNumber = (precisionedVal).toString()
+
+    const suffix = styles[opts.style].suffix[logOfVal]
+    const plural = (opts.style==="namedNumber" && precisionedVal!==1 && suffix!=="") ? "s" : ""
+    
+    
     // build the final string
-    return humanifiedNumber + suffix
+    return humanifiedNumber + suffix + plural
   }
 }
