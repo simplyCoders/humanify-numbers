@@ -120,7 +120,8 @@ export class Numbers {
       normalizedVal = val / (denominator ** logOfVal)
     }
 
-    const precisionedVal = maths[opts.math](normalizedVal * (10 ** opts.precision)) / (10 ** opts.precision)
+    const precisionedVal = maths[opts.math](normalizedVal * (10 ** opts.precision)) 
+                         / (10 ** opts.precision)
 
     const humanifiedNumber = (precisionedVal).toString()
 
