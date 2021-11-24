@@ -80,13 +80,20 @@ Following the IEC 80000-13:2008 spec:
 |1.234|123.4%|
 |12.34|1234.0K%|
 
+### namedNumber
+
+|Value|Humanify|
+|---|---|
+|1234|1.2 Thousands|
+|1234567|1.2 Millions|
+
 # Options
 
 An optional parameter to manage how the numbers are humanified. 
 
 |Option|Type|Description|
 |---|---|---|
-|style|string| "number" (default) or "space" or "percent"|
+|style|string| "number" (default) or "space" or "percent" or "namedNumber"|
 |precision|number| Value between 0 and 3, default 1|
 |math|string| "floor" (default) or "round" or "ceil"|
 |format (deprecated)|string| "number" (default) or "byte" or "percent"|
