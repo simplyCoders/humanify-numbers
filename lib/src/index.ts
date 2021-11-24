@@ -126,7 +126,7 @@ export class Numbers {
     const humanifiedNumber = (precisionedVal).toString()
 
     const suffix = styles[opts.style].suffix[logOfVal]
-    const plural = (opts.style==="namedNumber" && precisionedVal!==1 && suffix!=="") ? "s" : ""
+    const plural = (opts.style==='namedNumber' && precisionedVal!==1 && suffix!=='') ? 's' : ''
     
     
     // build the final string

@@ -2,7 +2,7 @@
 
 Stringify numbers for humans, aka **_Humanify_** the numbers. 
 
-E.g. 1234 ➜ "1.2K"
+E.g. 123456 is "123.4K" or "123.4 Thousands" or "120.5KiB"
 
 ## Install 
 
@@ -22,7 +22,7 @@ console.log("1234567890 ➜", Numbers.stringify(1234567890))
 
 console.log("1234567890 ➜", Numbers.stringify(1234567890, 
                             { style: 'space' })) 
-// output: 1.2GiB
+// output: 1.1GiB
 
 console.log("1234567890 ➜", (1234567890).toLocaleString())
 // compare with toLocalString(): 1,234,567,890
