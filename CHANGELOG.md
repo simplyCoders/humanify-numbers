@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.7 (Nov-23-2021)
+* Fix issues in readme.
+
 ## 1.1.6 (Nov-23-2021)
 * Complete transition to XiB.
 * Add option for named numbers, such that 1234 ➜ 1.2 Thousands
