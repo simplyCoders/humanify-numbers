@@ -1,6 +1,6 @@
 {
   "name": "humanify-numbers",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Stringify numbers for humans. E.g. 2000 ➜ \"2 Thousands\"",
   "main": "./dist/index.js",
   "scripts": {
