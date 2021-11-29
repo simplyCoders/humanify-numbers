@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.8 (Nov-28-2021)
+* Fix more issues in readme.
+
 ## 1.1.7 (Nov-23-2021)
 * Fix issues in readme.
 

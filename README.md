@@ -54,18 +54,18 @@ console.log("1234 ➜", Numbers.stringify(1234));
 |0.1234|0.1|
 |abcd|NaN|
 
-### Storage
+### space
 
 Following the IEC 80000-13:2008 spec:
 
 |Value|Humanify|
 |---|---|
 |1234|1.2KiB|
-|1234567|1.2MiB|
-|1234567890|1.2GiB|
-|1234567890123|1.2TiB|
-|1234567890123456|1.2PiB|
-|1234567890123456789|1.2EiB|
+|1234567|1.1MiB|
+|1234567890|1.1GiB|
+|1234567890123|1.1TiB|
+|1234567890123456|1PiB|
+|1234567890123456789|1EiB|
 |1.234|NaN|
 |-1234|NaN|
 |abcd|NaN|
@@ -84,7 +84,9 @@ Following the IEC 80000-13:2008 spec:
 
 |Value|Humanify|
 |---|---|
+|1000|1 Thousand|
 |1234|1.2 Thousands|
+|1000000|1 Million|
 |1234567|1.2 Millions|
 
 # Options
