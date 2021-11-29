@@ -21,8 +21,8 @@ console.log("1234567890 ➜", Numbers.stringify(1234567890))
 // output: 1.2B
 
 console.log("1234567890 ➜", Numbers.stringify(1234567890, 
-                            { style: 'storage' })) 
-// output: 1.2GB
+                            { style: 'space' })) 
+// output: 1.1GiB
 
 console.log("1234567890 ➜", (1234567890).toLocaleString())
 // compare with toLocalString(): 1,234,567,890
